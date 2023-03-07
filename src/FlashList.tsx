@@ -66,6 +66,8 @@ class FlashList<T> extends React.PureComponent<
   FlashListProps<T>,
   FlashListState<T>
 > {
+  static displayName: string;
+
   private rlvRef?: RecyclerListView<RecyclerListViewProps, any>;
   private stickyContentContainerRef?: PureComponentWrapper;
   private listFixedDimensionSize = 0;
@@ -845,5 +847,7 @@ class FlashList<T> extends React.PureComponent<
     this.viewabilityManager.recordInteraction();
   };
 }
+
+FlashList.displayName = "FlashList";
 
 export default FlashList;
